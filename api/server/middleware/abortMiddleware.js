@@ -149,13 +149,13 @@ const createAbortController = (req, res, getAbortData, getReqData) => {
 
 const handleAbortError = async (res, req, error, data) => {
   if (error?.message?.includes('base64')) {
-    logger.error('[handleAbortError] Error in base64 encoding', {
+    logger.error('[handleAbortError22] Error in base64 encoding', {
       ...error,
       stack: smartTruncateText(error?.stack, 1000),
       message: truncateText(error.message, 350),
     });
   } else {
-    logger.error('[handleAbortError] AI response error; aborting request:', error);
+    logger.error('[handleAbortError22] AI response error; aborting request:', error);
   }
   const { sender, conversationId, messageId, parentMessageId, partialText } = data;
 
